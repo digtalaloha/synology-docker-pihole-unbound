@@ -21,4 +21,8 @@ On your Synology NAS you'll need to.
 ### Setup Steps
 1. SSH into your Synology NAS.
 2. Change directory to /volume1/docker.
-3. Run `sudo git clone `
+3. Run `sudo git clone https://github.com/digtalaloha/synology-docker-pihole-unbound.git`.
+4. Change directory into synology-docker-pihole-unbound.
+5. Run `mkdir -p pihole/pihole`.
+6. Run `mkdir -p pihole/dnsmasq.d`.
+7. Edit the .env file to your specific environment.
