@@ -1,0 +1,57 @@
+version: '2'
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+#     cap_add: # Uncomment if you want to use Pi-Hole for DHCP
+#       - NET_ADMIN
+    ports:
+      - 53/tcp
+      - 53/udp
+#       - 67/udp # Uncomment if you want to use Pi-Hole for DHCP
+      - 80/tcp
+    environment:
+      - FTLCONF_LOCAL_IPV4=${PIHOLE_MACVLAN_IP}
+      - WEBPASSWORD=${WEBPASSWORD}
+      - PIHOLE_DNS_=${UNBOUND_MACVLAN_IP}
+      - TZ=Pacific/Honolulu
+      - DNSMASQ_USER=root
+      - DNSMASQ_LISTENING=local
+    volumes:
+      - /volume1/docker/pihole-unbound/pihole/pihole:/etc/pihole:rw
+      - /volume1/docker/pihole-unbound/pihole/dnsmasq.d:/etc/dnsmasq.d/:rw
+    networks:
+      macvlan:
+        ipv4_address: ${PIHOLE_MACVLAN_IP}
+      bridge:
+        ipv4_address: ${PIHOLE_BRIDGE_IP}
+    restart: always
+  unbound:
+    container_name: unbound
+    image: mvance/unbound:latest
+    ports:
+      - 53/tcp
+      - 53/udp
+    networks:
+      macvlan:
+        ipv4_address: ${UNBOUND_MACVLAN_IP}
+    restart: always
+
+networks:
+  macvlan:
+    driver: macvlan
+    driver_opts:
+      parent: ${NETWORK_INTERFACE}
+    ipam:
+      config:
+        - subnet: ${MACVLAN_SUBNET}
+          gateway: ${MACVLAN_GATEWAY}
+          ip_range: ${MACVLAN_IP_RANGE}/30
+  bridge:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: ${BRIDGE_SUBNET}
+        gateway: ${BRIDGE_GATEWAY}
+        ip_range: ${BRIDGE_IP_RANGE}/32
