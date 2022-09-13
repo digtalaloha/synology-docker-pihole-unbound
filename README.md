@@ -10,5 +10,15 @@ the command line and the Docker package from within DSM.  This generally works g
 Pi-Hole which is a problem.  The work around is to manually stop both containers then restart the containers in the proper order or use a custom 
 script (see the pinned comment from the video).  The setup configured in this project resolves this issue.
 
-## Setup Steps
+## Directions
+
+### Prerequistes
+
+On your Synology NAS you'll need to.
+1. Install the Docker and Git Server Packages
+2. Enable SSH
+
+### 
+
+
 
