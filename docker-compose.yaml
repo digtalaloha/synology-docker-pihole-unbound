@@ -19,8 +19,8 @@ services:
       - DNSMASQ_USER=root
       - DNSMASQ_LISTENING=local
     volumes:
-      - /volume1/docker/pihole-unbound/pihole/pihole:/etc/pihole:rw
-      - /volume1/docker/pihole-unbound/pihole/dnsmasq.d:/etc/dnsmasq.d/:rw
+      - /volume1/docker/synology-docker-pihole-unbound/pihole/pihole:/etc/pihole:rw
+      - /volume1/docker/synology-docker-pihole-unbound/pihole/dnsmasq.d:/etc/dnsmasq.d/:rw
     networks:
       macvlan:
         ipv4_address: ${PIHOLE_MACVLAN_IP}
