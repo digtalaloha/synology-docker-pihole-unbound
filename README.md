@@ -27,3 +27,6 @@ On your Synology NAS you'll need to.
 6. Run `mkdir -p pihole/dnsmasq.d`.
 7. Edit the .env file to your specific environment (placeholder content added into the file is what I used in my setup).
 8. Run `sudo docker-compose up -d` to run the containers.
+
+## References
+* https://github.com/chriscrowe/docker-pihole-unbound/
