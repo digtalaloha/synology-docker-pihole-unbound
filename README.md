@@ -30,3 +30,4 @@ On your Synology NAS you'll need to.
 
 ## References
 * https://github.com/chriscrowe/docker-pihole-unbound/
+* https://github.com/pi-hole/docker-pi-hole#quick-start
