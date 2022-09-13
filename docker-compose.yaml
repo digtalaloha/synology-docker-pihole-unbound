@@ -47,11 +47,11 @@ networks:
       config:
         - subnet: ${MACVLAN_SUBNET}
           gateway: ${MACVLAN_GATEWAY}
-          ip_range: ${MACVLAN_IP_RANGE}/30
+          ip_range: ${MACVLAN_IP_RANGE}
   bridge:
     driver: bridge
     ipam:
       config:
       - subnet: ${BRIDGE_SUBNET}
         gateway: ${BRIDGE_GATEWAY}
-        ip_range: ${BRIDGE_IP_RANGE}/32
+        ip_range: ${BRIDGE_IP_RANGE}
