@@ -18,7 +18,7 @@ On your Synology NAS you'll need to.
 1. Install the Docker and Git Server Packages
 2. Enable SSH
 
-### 
-
-
-
+### Setup Steps
+1. SSH into your Synology NAS.
+2. Change directory to /volume1/docker.
+3. Run `sudo git clone `
