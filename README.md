@@ -2,16 +2,9 @@
 
 ## Description
 
-Using docker-compose, with the included docker-compose.yaml file, you can run Pi-Hole + Unbound, each in its own container, on a Synology NAS.  The docker-compose.yaml file will also create a MacVLAN and a custom bridge network for the containers.  The MacVLAN network will be a /30 subnet, 
-allowing for two assignable IP addresses from your Local LAN that will be assigned to the individual containers.  The custom bridge network will be 
-a /32 subnet, allowing for 1 assignable IP Address that will be assigned to the Pi-Hole container.  
+Using docker-compose, with the included docker-compose.yaml file, you can run Pi-Hole + Unbound, each in its own container, on a Synology NAS.  The docker-compose.yaml file will also create a MacVLAN and a custom bridge network for the containers.  The MacVLAN network will be a /30 subnet, allowing for two assignable IP addresses from your Local LAN that will be assigned to the individual containers.  The custom bridge network will be a /32 subnet, allowing for 1 assignable IP Address that will be assigned to the Pi-Hole container.
 
-Much of the setup for this project is influenced by my [Pi-Hole Docker Synology NAS Setup Guide](https://youtu.be/1yG0p9gU104) and 
-[Unbound Pi-Hole Synology Setup](https://youtu.be/-546g1w_L3w) videos, which I encourage you to view for details on how things are is setup.
-As an overview, the videos describe how to setup Pi-Hole and Unbound through the command line and from the Docker package from within DSM.  
-This generally works great except on reboot Unbound may start up prior to Pi-Hole which is a problem.  The work around is to manually stop both 
-containers, then restart the containers in the proper order or use a custom startup script to stop the containers and start them up again in the 
-proper order (see the pinned comment from the second video listed above).  The setup configured in this project resolves this issue.
+Much of the setup for this project is influenced by my [Pi-Hole Docker Synology NAS Setup Guide](https://youtu.be/1yG0p9gU104) and [Unbound Pi-Hole Synology Setup](https://youtu.be/-546g1w_L3w) videos, which I encourage you to view for details on how things are is setup. As an overview, the videos describe how to setup Pi-Hole and Unbound through the command line and from the Docker package from within DSM. This generally works great except on reboot Unbound may start up prior to Pi-Hole which is a problem.  The work around is to manually stop both containers, then restart the containers in the proper order or use a custom startup script to stop the containers and start them up again in the proper order (see the pinned comment from the second video listed above).  The setup configured in this project resolves this issue.
 
 ## Directions
 
