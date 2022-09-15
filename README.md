@@ -18,16 +18,40 @@ On your Synology NAS you'll need to do the following:
 
 ### Setup Steps
 1. SSH into your Synology NAS.
-2. Change directory to /volume1/docker. 
+2. Change directory into /volume1/docker. 
 ```
 cd /volume1/docker
 ```
-4. Run `sudo git clone https://github.com/digtalaloha/synology-docker-pihole-unbound.git`.
-5. Change directory into synology-docker-pihole-unbound.
-6. Run `mkdir -p pihole/pihole`.
-7. Run `mkdir -p pihole/dnsmasq.d`.
-8. Edit the .env file to your specific environment (placeholder content added into the file is what I used in my setup).
-9. Run `sudo docker-compose up -d` to run the containers.
+4. Clone this repository.
+```
+sudo git clone https://github.com/digtalaloha/synology-docker-pihole-unbound.git
+```
+5. Change directory into the newly created synology-docker-pihole-unbound directory.
+```
+cd synology-docker-pihole-unbound
+```
+6. Create host volume mount points that will be used by the Pi-Hole container.
+```
+mkdir -p pihole/pihole; mkdir -p pihole/dnsmasq.d
+```
+7. Edit the .env file with the specifics from your environment (I left the settings I used as placeholders in the actual .env file).  These entries will be used to auto populate the docker-compose.yaml file.
+```
+PIHOLE_MACVLAN_IP=<Enter the first assignable IP address from the /30 MacVLAN subnet you created>
+PIHOLE_BRIDGE_IP=<Enter the one assignable IP address from the /32 custom bridge subnet you created>
+UNBOUND_MACVLAN_IP=<Enter the second assignable IP address from the /30 MacVLAN subnet you created>
+WEBPASSWORD='<Enter the Pi-Hole GUI password you would like to use (keep the single quotes)>'
+NETWORK_INTERFACE=<Enter the network interface your Synology NAS uses to access your LAN>
+MACVLAN_SUBNET=<Enter the LAN network>/24
+MACVLAN_GATEWAY=<Enter the LAN Gateway>
+MACVLAN_IP_RANGE=<Enter the starting IP address of the LAN subnet that the MacVLAN network will use>/30
+BRIDGE_SUBNET=<Enter the custom bridge network>/24
+BRIDGE_GATEWAY=<Enter the custom bridge network gateway>
+BRIDGE_IP_RANGE=<Enter the IP address of the custom bridge network>/32
+```
+9. Create and start the Pi-Hole and Unbound containers along with setup the MacVLAN and custom bridge network using docker-compose.
+```
+sudo docker-compose up -d
+```
 
 ## References
 * https://github.com/chriscrowe/docker-pihole-unbound/
