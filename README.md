@@ -2,8 +2,7 @@
 
 ## Description
 
-Using docker-compose, with the included docker-compose.yaml file, you can run Pi-Hole + Unbound, each in its own container, on a Synology NAS.  
-The docker-compose.yaml file will also create a MacVLAN and a custom bridge network for the containers.  The MacVLAN network will be a /30 subnet, 
+Using docker-compose, with the included docker-compose.yaml file, you can run Pi-Hole + Unbound, each in its own container, on a Synology NAS.  The docker-compose.yaml file will also create a MacVLAN and a custom bridge network for the containers.  The MacVLAN network will be a /30 subnet, 
 allowing for two assignable IP addresses from your Local LAN that will be assigned to the individual containers.  The custom bridge network will be 
 a /32 subnet, allowing for 1 assignable IP Address that will be assigned to the Pi-Hole container.  
 
