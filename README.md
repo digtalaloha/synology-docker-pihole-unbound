@@ -8,17 +8,17 @@ Much of the setup for this project is influenced by my [Pi-Hole Docker Synology 
 
 ## Directions
 
-You'll need to make sure the prerequisites are fulfilled on your Synology NAS first, then run through the setup steps below
+You'll need to make sure the prerequisites are fulfilled on your Synology NAS first, then run through the setup steps below. I also run through setting everything up in this video here -> VIDEO NOT DONE YET.
 
 ### Prerequistes
-
-On your Synology NAS you'll need to.
-1. Install the Docker and Git Server Packages
-2. Enable SSH
+On your Synology NAS you'll need to do the following:
+1. Install the Docker package.
+2. Install the Git Server package.
+3. Enable SSH.
 
 ### Setup Steps
 1. SSH into your Synology NAS.
-2. Change directory to /volume1/docker.
+2. Change directory to /volume1/docker. `cd /volume1/docker`
 3. Run `sudo git clone https://github.com/digtalaloha/synology-docker-pihole-unbound.git`.
 4. Change directory into synology-docker-pihole-unbound.
 5. Run `mkdir -p pihole/pihole`.
