@@ -55,6 +55,8 @@ BRIDGE_IP_RANGE=<Enter the IP address of the custom bridge network>/32
 ```
 sudo docker-compose up -d
 ```
+### Start Using Pi-Hole
+At this point you should be able to access your Pi-Hole 
 
 ## References
 * https://github.com/chriscrowe/docker-pihole-unbound/
