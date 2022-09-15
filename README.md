@@ -56,7 +56,11 @@ BRIDGE_IP_RANGE=<Enter the IP address of the custom bridge network>/32
 sudo docker-compose up -d
 ```
 ### Start Using Pi-Hole
-At this point you should be able to access your Pi-Hole 
+At this point if everything was created and started up properly you should be able to...
+* Access your Pi-Hole container from it's Web GUI using the MacVLAN IP address assigned to it.
+* Login to the Pi-Hole admin interface using the password you entered in the .env file.
+* Assign the Pi-Hole MacVLAN IP address as the DNS server for your clients and/or on your DHCP server.
+* Assign the Pi-Hole custom bridge network on your Synology NAS. 
 
 ## References
 * https://github.com/chriscrowe/docker-pihole-unbound/
