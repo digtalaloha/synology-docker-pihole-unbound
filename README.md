@@ -18,6 +18,9 @@ On your Synology NAS you'll need to do the following:
 
 ### Setup Steps
 1. SSH into your Synology NAS.
+```
+ssh <admin account>@<IP address of Synology NAS>
+```
 2. Change directory into /volume1/docker. 
 ```
 cd /volume1/docker
