@@ -15,7 +15,7 @@ services:
       - FTLCONF_LOCAL_IPV4=${PIHOLE_MACVLAN_IP}
       - WEBPASSWORD=${WEBPASSWORD}
       - PIHOLE_DNS_=${UNBOUND_MACVLAN_IP}
-      - TZ=Pacific/Honolulu
+      - TZ=${TIMEZONE}
       - DNSMASQ_USER=root
       - DNSMASQ_LISTENING=local
     volumes:
