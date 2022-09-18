@@ -50,6 +50,7 @@ MACVLAN_IP_RANGE=<Enter the starting IP address of the LAN subnet that the MacVL
 BRIDGE_SUBNET=<Enter the custom bridge network>/24
 BRIDGE_GATEWAY=<Enter the custom bridge network gateway>
 BRIDGE_IP_RANGE=<Enter the IP address of the custom bridge network>/32
+TIMEZONE=<Enter the timezone you are in>
 ```
 9. Create and start the Pi-Hole and Unbound containers along with setup the MacVLAN and custom bridge network using docker-compose.
 ```
