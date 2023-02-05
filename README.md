@@ -8,7 +8,7 @@ Much of the setup for this project is influenced by my [Pi-Hole Docker Synology 
 
 ## Directions
 
-You'll need to make sure the prerequisites are fulfilled on your Synology NAS first, then run through the setup steps below. I also run through setting everything up in this video here -> VIDEO NOT DONE YET.
+You'll need to make sure the prerequisites are fulfilled on your Synology NAS first, then run through the setup steps below. I also run through setting everything up in this video here -> https://youtu.be/nOlx10aRZjk.
 
 ### Prerequistes
 On your Synology NAS you'll need to do the following:
