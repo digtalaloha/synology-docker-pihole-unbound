@@ -39,6 +39,7 @@ mkdir -p pihole/pihole; mkdir -p pihole/dnsmasq.d
 ```
 7. Edit the .env file with the specifics from your environment (I left the settings I used as placeholders in the actual .env file).  These entries will be used to auto populate the docker-compose.yaml file.
 ```
+HOSTNAME=<Enter the hostname you would like to assign to the Pi-hole container>
 PIHOLE_MACVLAN_IP=<Enter the first assignable IP address from the /30 MacVLAN subnet you created>
 PIHOLE_BRIDGE_IP=<Enter the one assignable IP address from the /32 custom bridge subnet you created>
 UNBOUND_MACVLAN_IP=<Enter the second assignable IP address from the /30 MacVLAN subnet you created>

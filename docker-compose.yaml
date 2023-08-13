@@ -4,6 +4,7 @@ services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
+    hostname: ${HOSTNAME}
 #     cap_add: # Uncomment if you want to use Pi-Hole for DHCP
 #       - NET_ADMIN
     ports:
